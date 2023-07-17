@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-// state manageMent using EventHandler
+// state manageMent using UseRefHook
 function StateManagement() {
   const [todos, setTodos] = useState([]);
   const inputRef = useRef(null);
