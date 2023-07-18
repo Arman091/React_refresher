@@ -40,11 +40,11 @@ function MyComponent() {
     
     // CURRENT STATE UPDATE
     setState((currentCount) => {
-        return { count: currentCount.count + value };
+        return {...currentCount, count: currentCount.count + value };
     })
      
     setState((currentCount) => {
-        return { count: currentCount.count + value };
+        return { ...currentCount,count: currentCount.count + value };
     });
 
   }
