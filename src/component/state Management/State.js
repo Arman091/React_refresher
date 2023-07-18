@@ -1,6 +1,11 @@
+
+/* Objective and Outcome:-
+* 1: Leran taking user input using Ref
+* 2: Event Handling
+* 3: dunamic list Rendering
+*/
 import React, { useState, useRef } from "react";
 
-// state manageMent using UseRefHook
 function StateManagement() {
   const [todos, setTodos] = useState([]);
   const inputRef = useRef(null);

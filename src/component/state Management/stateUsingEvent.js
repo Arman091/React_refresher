@@ -11,7 +11,7 @@
 
 import React, { useState } from "react";
 
-function MyForm() {
+function SingleStateObject() {
   const [title, setTitle] = useState("");
   const [issuedDate, setIssuedDate] = useState("");
   const [price, setPrice] = useState("");
@@ -91,4 +91,4 @@ function MyForm() {
   );
 }
 
-export default MyForm;
+export default SingleStateObject;
