@@ -1,9 +1,9 @@
-import MyApp from "./component/Styling_react/Main";
+import EventExampleWithEffect from "./component/UseEffect/Effect";
 
 function App() {
   return (
-    <div className="container">
-    <MyApp/>
+    <div>
+    <EventExampleWithEffect/>
     </div>
   );
 }

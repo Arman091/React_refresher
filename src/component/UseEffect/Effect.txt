@@ -1,0 +1,11 @@
+When a component subscribes to an event, it registers an event listener that keeps a reference to the component's function or callback that handles the event. If the component is unmounted or removed from the DOM without removing the event listener, the reference to the component's function remains in memory, even though the component is no longer needed.
+
+2.When you use the useEffect hook in a functional component, you might want to set up subscriptions, timers, or other side effects. However, it's essential to properly clean up those effects to avoid memory leaks, prevent unnecessary computations, or avoid errors caused by accessing resources that no longer exist.
+
+Here's why we need useEffect cleanups:
+
+Preventing Memory Leaks: If you set up subscriptions, event listeners, or timers in the useEffect hook without proper cleanup, those resources might still be active after the component is unmounted. This can lead to memory leaks, where unused resources are not released, gradually consuming more memory.
+
+Avoiding Stale References: If your effect depends on some state or props, and the effect is re-run when those dependencies change, it's crucial to clean up the previous effect before setting up the new one. Otherwise, you might have stale references or unintended behavior when accessing outdated state or props.
+
+Efficient Resource Management: Cleaning up resources when they are no longer needed helps in efficient resource management. For example, closing connections, releasing subscriptions, or clearing intervals when the component is unmounted ensures that resources are not wasted or used unnecessarily.
