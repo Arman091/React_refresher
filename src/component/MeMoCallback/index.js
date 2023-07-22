@@ -4,12 +4,11 @@
  */
 
 import React from "react";
-
-import "./App.css";
+import classes from "./memo.module.css"
 
 function MemoApp() {
   return (
-    <div className="app">
+    <div className={classes.app}>
       <h1>Hi there!</h1>
     </div>
   );
