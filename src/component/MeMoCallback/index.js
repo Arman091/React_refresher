@@ -6,21 +6,25 @@
 import React from "react";
 import classes from "./memo.module.css";
 import Button from "./Button";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import DemoOutput from "./Demo";
 function MemoApp() {
-    const [showpara, setShowpara] = useState(false);
-    console.log("APP Memo RUNNING !!");
-  function handleClick() {
+  const [showpara, setShowpara] = useState(false);
+  console.log("APP Memo RUNNING !!");
+ let clickHandle = useCallback(()=> {
     setShowpara((prevState) => {
       return !prevState;
     });
-  }
+  },[]);
+
   return (
     <div className={classes.app}>
       <h1>Hi there!</h1>
-          <DemoOutput show={showpara} />
-      <Button onClick={handleClick}>Toggle Para</Button>
+      {/* if somehow we pass a prop value to child that not change on each re-render of parent in that case 
+      we can stop re-evaluation of child component by wrapping it into (React.memo) example
+      <DemoOutput show={false} /> */}
+      <DemoOutput show={showpara} />
+      <Button onClick={clickHandle}>Toggle Para</Button>
     </div>
   );
 }
